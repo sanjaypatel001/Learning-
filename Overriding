@@ -1,0 +1,45 @@
+using System;
+
+namespace Overriding
+{
+    class parent
+    {
+        public virtual void fun() //overriding using virtual keyword
+        {
+            System.Console.WriteLine("Fun from parent class");
+        }
+
+        public void fun1() 
+        {
+            System.Console.WriteLine("Fun1 from parent class");
+        }
+    }
+    class child:parent
+    {
+        public override void fun() //overriding the fun function
+        {
+            System.Console.WriteLine("Fun from child class");  
+        }
+        public new void fun1()  // method hiding using new keyword
+        {
+            System.Console.WriteLine("Fun1 from child class");
+        }
+        static void Main(string[] args)
+        {
+            child c=new child();
+            c.fun();
+            c.fun1();
+            parent p=new child();// creating reference of parent class using child class instance
+            System.Console.WriteLine("*********Parent class reference************");
+            p.fun(); //call child class function 
+            p.fun1(); //call parent class function
+        }
+    }
+   
+}
+output:
+Fun from child class
+Fun1 from child class
+*********Parent class reference************
+Fun from child class
+Fun1 from parent class
