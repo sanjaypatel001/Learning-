@@ -1,0 +1,40 @@
+using System;
+
+namespace Interface
+{
+    interface a  // interface
+    {
+    
+        void a();
+    }
+    interface b :a   //a interface implemented to b interface
+    {
+        void b();
+    }
+
+    class Program :b  // b interface implemented to program class
+    {
+        public void a()
+        {
+            System.Console.WriteLine("Hello a");
+        }
+        public void b()
+        {
+            System.Console.WriteLine("Hello b");
+        }
+
+        static void Main(string[] args)
+        {
+            Program p=new Program();
+            p.a();
+            p.b();
+
+    }
+}}
+
+output:
+Fun from child class
+Fun1 from child class
+*********Parent class reference************
+Fun from child class
+Fun1 from parent class
