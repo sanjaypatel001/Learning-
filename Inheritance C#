@@ -1,1 +1,54 @@
-Inheritance
+                                          /* Inheritance*/                   
+using System;
+namespace Inheritance
+{
+    class grandparent
+    {
+        public grandparent()
+        {
+            System.Console.WriteLine("GrandParent class constructor");
+        }
+        public void grandhello()
+        {
+            System.Console.WriteLine("Hello from Grandparent");
+        }
+    }
+    class parent :grandparent //Inherit grandparent class under parent class
+    {
+        public parent()  ///Parent class constructor
+        {
+            System.Console.WriteLine("Parent class constuctor");
+        }
+        public void parenthello()
+        {
+          System.Console.WriteLine("Hello from parent class");  
+        }
+    }
+    class child:parent // Inherit parent class under child class
+    {
+        public child()  //Child classs constructor
+        {
+            System.Console.WriteLine("Child class Constructor");
+        }
+        public void childhello()
+        {
+           System.Console.WriteLine("Hello from child class");
+        }
+        static void Main(string[] args)
+        {
+            child c=new child();
+            c.grandhello();
+            c.parenthello();
+            c.childhello();
+        }
+    }
+}
+
+
+output:
+GrandParent class constructor
+Parent class constuctor
+Child class Constructor
+Hello from Grandparent
+Hello from parent class
+Hello from child class
