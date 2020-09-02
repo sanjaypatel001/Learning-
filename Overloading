@@ -1,36 +1,35 @@
 using System;
 
-namespace Interface
+namespace Overloading
 {
-    interface a  // interface
+    class Overloading
     {
-    
-        void a();
-    }
-    interface b :a   //a interface implemented to b interface
-    {
-        void b();
-    }
-
-    class Program :b  // b interface implemented to program class
-    {
-        public void a()
+        public void Fun()
         {
-            System.Console.WriteLine("Hello a");
+            System.Console.WriteLine("Fun function with no parameter");
         }
-        public void b()
+        public void Fun(int i)
         {
-            System.Console.WriteLine("Hello b");
+            System.Console.WriteLine("Fun function with integer type parameter");
         }
-
+        public void Fun(string s)
+        {
+            System.Console.WriteLine("Fun function with string type sparameter");
+        }
+        public void Fun(int i,string s)
+        {
+            System.Console.WriteLine("Fun function with integer and string type parameter");
+        }
         static void Main(string[] args)
         {
-            Program p=new Program();
-            p.a();
-            p.b();
-
+            Overloading o=new Overloading();
+            o.Fun();
+            o.Fun(5);
+            o.Fun("s");
+            o.Fun(5,"s");
+        }
     }
-}}
+}
 
 output:
 Fun function with no parameter
