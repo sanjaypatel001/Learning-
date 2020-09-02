@@ -1,0 +1,26 @@
+using System;
+
+namespace abstract_
+{
+     abstract class color
+    {
+       abstract public void fun();
+       
+    }
+    class red : color
+    {
+        public override void fun()
+        {
+            System.Console.WriteLine("red");
+        }
+
+        static void Main(string[] args)
+        {
+            red r=new red();
+            r.fun();
+        }
+    }
+}
+
+output:
+red
